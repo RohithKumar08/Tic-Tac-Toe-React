@@ -1,32 +1,9 @@
 import { useState } from 'react';
 import './App.css';
+import CalculateWinner from './Components/CalculateWinner';
+import Square from './Components/Square';
 
-function Square({values, onSquareClick}){
-  return(
-    <button className='buttonoption' onClick={onSquareClick}>{values}</button>
-  );
-}
-
-function CalculateWinner(squares){
-  const ways = [
-    [0,1,2],
-    [3,4,5],
-    [6,7,8],
-    [0,3,6],
-    [1,4,7],
-    [2,5,8],
-    [0,4,8],
-    [2,4,6],
-  ];
-  for(let i = 0; i < ways.length; i++){
-    const[a,b,c] = ways[i];
-    if(squares[a] && (squares[a] === squares[b]) && (squares[a] === squares[c])){
-      return squares[a];
-    }
-  }
-  return null;
-}
-
+<CalculateWinner />
 function reset(){
   window.location.reload(false);
 }
